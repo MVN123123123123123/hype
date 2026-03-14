@@ -10,7 +10,7 @@ Summary:        A highly customizable dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://github.com/hyprwm/Hyprland
 # We will use a locally generated tarball that includes the wlroots submodule
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/hyprwm/Hyprland/releases/download/v%{version}/source-v%{version}.tar.gz
 
 BuildRequires:  wayland-devel
 BuildRequires:  libinput-devel
