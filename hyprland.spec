@@ -1,6 +1,7 @@
-%global commit <LATEST_COMMIT_HASH>
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commit <LATEST_COMMIT_HASH> 
+%global shortcommit %(c=%{commit}; echo ${c:0:7}) 
 %global snapdate <YYYYMMDD>
+
 Name:           hyprland
 Version:        0.54.2
 Release:        1%{?dist}
@@ -9,7 +10,8 @@ Summary:        A highly customizable dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://github.com/hyprwm/Hyprland
 # We will use a locally generated tarball that includes the wlroots submodule
-Source0:        %{url}
+Source0:        %{name}-%{version}.tar.gz
+
 BuildRequires:  wayland-devel
 BuildRequires:  libinput-devel
 BuildRequires:  libxkbcommon-devel
@@ -35,34 +37,30 @@ BuildRequires:  mesa-libEGL-devel
 BuildRequires:  mesa-libGLES-devel
 BuildRequires:  libglvnd-devel
 BuildRequires:  cmake
-BuildRequires:  libxcb-devel
 BuildRequires:  libX11-devel
-BuildRequires:  pixman-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  cairo-devel
 BuildRequires:  pango-devel
+
 # gdb is a runtime preference for debugging, but not strictly needed for building the package.
-# gemini-3.1-pro cooked this , not me , i'm too lazy.
+# gemini-3.1-pro cooked this and fixed it too.
+
 %description
 Hyprland is a dynamic tiling Wayland compositor that doesn't sacrifice on its looks.
 This package is built with the required wlroots subprojects included.
 
 %prep
 # Extract the tarball
-%autosetup -n Hyprland
+%autosetup -n Hyprland-%{version}
 
 %build
-
 %cmake
-
 %cmake_build
 
 %install
-
 %cmake_install
 
 %files
-
 %license LICENSE
 %{_bindir}/Hyprland
 %{_bindir}/hyprctl
@@ -73,4 +71,5 @@ This package is built with the required wlroots subprojects included.
 %{_datadir}/*
 
 %changelog
-%auto
+* Sat Mar 14 2026 noclog <noclog@example.com> - 0.54.2-1
+- Initial Copr build fix
