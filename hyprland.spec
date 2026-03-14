@@ -6,8 +6,27 @@ Summary:        A highly customizable dynamic tiling Wayland compositor
 License:        BSD-3-Clause
 URL:            https://github.com/hyprwm/Hyprland
 # We will use a locally generated tarball that includes the wlroots submodule
-Source0:        %{name}-%{version}.tar.gz
-
+Source0:        %{url}
+Wayland & Input Libraries
+BuildRequires:  wayland-devel
+BuildRequires:  libinput-devel
+BuildRequires:  libxkbcommon-devel
+BuildRequires:  glslang-devel
+BuildRequires:  pixman-devel
+BuildRequires:  libXcursor-devel
+BuildRequires:  libdrm-devel
+BuildRequires:  mesa-libgbm-devel
+BuildRequires:  lcms2-devel
+BuildRequires:  pkgconf-pkg-config
+BuildRequires:  git
+BuildRequires:  udis86-devel
+BuildRequires:  libuuid-devel
+BuildRequires:  glib2-devel
+BuildRequires:  re2-devel
+BuildRequires:  muparser-devel
+BuildRequires:  libxcb-devel
+BuildRequires:  xcb-util-wm-devel
+BuildRequires:  xcb-util-errors-devel
 BuildRequires:  gcc-c++
 BuildRequires:  mesa-libGL-devel
 BuildRequires:  mesa-libEGL-devel
@@ -52,3 +71,4 @@ This package is built with the required wlroots subprojects included.
 %{_datadir}/*
 
 %changelog
+
