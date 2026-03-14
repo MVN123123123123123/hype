@@ -73,4 +73,4 @@ This package is built with the required wlroots subprojects included.
 %{_datadir}/*
 
 %changelog
-
+%auto
