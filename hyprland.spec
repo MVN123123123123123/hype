@@ -10,7 +10,6 @@ License:        BSD-3-Clause
 URL:            https://github.com/hyprwm/Hyprland
 # We will use a locally generated tarball that includes the wlroots submodule
 Source0:        %{url}
-Wayland & Input Libraries
 BuildRequires:  wayland-devel
 BuildRequires:  libinput-devel
 BuildRequires:  libxkbcommon-devel
