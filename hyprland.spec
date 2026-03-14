@@ -1,3 +1,6 @@
+%global commit <LATEST_COMMIT_HASH>
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global snapdate <YYYYMMDD>
 Name:           hyprland
 Version:        0.54.2
 Release:        1%{?dist}
