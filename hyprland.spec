@@ -25,7 +25,7 @@ BuildRequires:  udis86-devel
 BuildRequires:  libuuid-devel
 BuildRequires:  glib2-devel
 BuildRequires:  re2-devel
-BuildRequires:  muparser-devel
+BuildRequires:  muParser-devel
 BuildRequires:  libxcb-devel
 BuildRequires:  xcb-util-wm-devel
 BuildRequires:  xcb-util-errors-devel
