@@ -51,7 +51,7 @@ This package is built with the required wlroots subprojects included.
 
 %prep
 # Extract the tarball
-%autosetup -n /builddir/build/BUILD/hyprland-0.54.2-build/Hyprland
+%autosetup 
 
 %build
 %cmake
